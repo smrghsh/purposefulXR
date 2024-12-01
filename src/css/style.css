@@ -1,0 +1,24 @@
+main {
+  position: absolute;
+  z-index: 1;
+  overflow: auto; /* Enable scrolling */
+  pointer-events: auto; /* Allow scrolling and other interactions */
+  /* background-color: skyblue; */
+}
+
+canvas {
+  position: absolute;
+  z-index: 0;
+  pointer-events: auto; /* Ensure the canvas can receive pointer events */
+}
+
+/* Ensure pointer events pass through non-interactive areas of main */
+main:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Allow events to pass through empty areas */
+}
