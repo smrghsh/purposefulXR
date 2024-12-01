@@ -13,6 +13,7 @@
   "dependencies": {
     "lil-gui": "^0.19.2",
     "three": "^0.171.0",
-    "vite": "^5.2.11"
+    "vite": "^5.2.11",
+    "simplex-noise": "^2.4.0"
   }
 }
