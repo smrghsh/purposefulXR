@@ -215,7 +215,7 @@ const planeMaterial2 = new THREE.MeshBasicMaterial({
 
 // axes helper biotch
 const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
+// scene.add(axesHelper);
 // Manipulate the vertices of the plane geometry using simplex noise
 const vertices = planeGeometry.attributes.position.array;
 const scale = 0.3; // Adjust the height variation

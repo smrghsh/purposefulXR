@@ -1,3 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+h1,
+h3,
+h4 {
+  font-family: "Chakra Petch", sans-serif;
+}
+h2,
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
 main {
   position: absolute;
   z-index: 1;
@@ -14,7 +26,6 @@ canvas {
 .columns,
 .column {
   color: rgb(57, 83, 143);
-  font-weight: 800;
   /* color: white; */
   background-color: rgb(222, 247, 252, 0.4);
   /* padding: 3em; */
@@ -38,4 +49,18 @@ main:before {
   right: 0;
   bottom: 0;
   pointer-events: none; /* Allow events to pass through empty areas */
+}
+h2 {
+  font-size: 2em;
+}
+
+footer {
+  /* min-height: 10em; */
+  width: 100vw;
+  margin-top: 10em;
+  padding: 1em;
+  padding-bottom: 2em;
+  text-align: center;
+  /* faint grey line above */
+  border-top: 1px solid rgb(222, 247, 252, 1);
 }
