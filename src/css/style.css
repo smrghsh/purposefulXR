@@ -2,14 +2,31 @@ main {
   position: absolute;
   z-index: 1;
   overflow: auto; /* Enable scrolling */
-  pointer-events: auto; /* Allow scrolling and other interactions */
-  /* background-color: skyblue; */
 }
 
 canvas {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   z-index: 0;
-  pointer-events: auto; /* Ensure the canvas can receive pointer events */
+  pointer-events: none;
+}
+
+.columns,
+.column {
+  color: rgb(57, 83, 143);
+  font-weight: 800;
+  /* color: white; */
+  background-color: rgb(222, 247, 252, 0.4);
+  /* padding: 3em; */
+  /* round the damn corners */
+  padding-left: 1.1111em;
+  padding-right: 1.222em;
+  padding-top: 0.888885em;
+  padding-bottom: 0.888888888em;
+  border-radius: 15px;
+  /* make it artsy */
+  backdrop-filter: blur(10px);
+  /* make it pop */
 }
 
 /* Ensure pointer events pass through non-interactive areas of main */
