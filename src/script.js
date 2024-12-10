@@ -6,7 +6,9 @@ import SimplexNoise from "simplex-noise";
 class Sakura {
   constructor(scene, quantity) {
     const textureLoader = new THREE.TextureLoader();
-    const particleTexture = textureLoader.load("/images/flower.png");
+    const particleTexture = textureLoader.load(
+      "https:/smrghsh.github.io/purposefulXR/images/flower.png"
+    );
 
     this.particlesGeometry = new THREE.BufferGeometry();
     this.count = 108;
