@@ -5,10 +5,22 @@ import SimplexNoise from "simplex-noise";
 
 class Sakura {
   constructor(scene, quantity) {
-    const textureLoader = new THREE.TextureLoader();
-    const particleTexture = textureLoader.load(
-      "https:/smrghsh.github.io/purposefulXR/images/flower.png"
-    );
+    const loadingManager = new THREE.LoadingManager();
+    loadingManager.onStart = () => {
+      console.log("loading started");
+    };
+    loadingManager.onLoad = () => {
+      console.log("loading finished");
+    };
+    loadingManager.onProgress = () => {
+      console.log("loading progressing");
+    };
+    loadingManager.onError = () => {
+      console.log("loading error");
+    };
+
+    const textureLoader = new THREE.TextureLoader(loadingManager);
+    const particleTexture = textureLoader.load("./images/flower.png");
 
     this.particlesGeometry = new THREE.BufferGeometry();
     this.count = 108;
@@ -48,7 +60,7 @@ class Sakura {
 
     this.particlesMaterial.transparent = true;
     this.particlesMaterial.alphaMap = particleTexture;
-    // this.particlesMaterial.alphaTest = 0.01;
+    this.particlesMaterial.alphaTest = 0.01;
     // this.particlesMaterial.depthTest = true;
     // this.particlesMaterial.depthWrite = false;
     // this.particlesMaterial.blending = THREE.AdditiveBlending;
@@ -189,7 +201,7 @@ let scrollY = window.scrollY;
 window.addEventListener("scroll", () => {
   scrollY = window.scrollY;
 
-  console.log(scrollY);
+  // console.log(scrollY);
 });
 
 /**
