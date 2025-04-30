@@ -277,3 +277,36 @@ const tick = () => {
 };
 
 tick();
+
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+
+function showSlide(n) {
+  slideIndex = (n + slides.length) % slides.length;
+  slides.forEach((slide, i) => {
+    slide.style.display = i === slideIndex ? "block" : "none";
+    dots[i].classList.toggle("active", i === slideIndex);
+  });
+}
+
+function nextSlide() {
+  showSlide(slideIndex + 1);
+}
+
+function prevSlide() {
+  showSlide(slideIndex - 1);
+}
+
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => showSlide(i));
+});
+
+prev.addEventListener("click", prevSlide);
+next.addEventListener("click", nextSlide);
+
+showSlide(slideIndex); // initial display
+
+setInterval(nextSlide, 5000); // auto-slide every 5s
